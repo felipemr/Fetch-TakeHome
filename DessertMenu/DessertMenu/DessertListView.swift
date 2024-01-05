@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct DessertListView: View {
+
+    @State var dessertList: [MealListItem] = MealList.sample().meals
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Dessert")
+        NavigationStack {
+            List(dessertList) { dessert in
+                NavigationLink(value: dessert) {
+                    Text(dessert.name)
+                }
+            }
+            .navigationTitle("Desserts")
+            .navigationDestination(for: MealListItem.self) { dessertItem in
+                Text(dessertItem.name)
+            }
         }
-        .padding()
     }
 }
 
