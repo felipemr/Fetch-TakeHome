@@ -23,4 +23,10 @@ struct MealListItem: Codable, Identifiable, Hashable {
     static func sample() -> Self {
         return MealListItem(id: "Sample 01", name: "Cake", thumbURL: URL(string: "https://www.themealdb.com/images/media/meals/ywwrsp1511720277.jpg"))
     }
+
+    enum CodingKeys: String, CodingKey {
+        case id = "idMeal"
+        case name = "strMeal"
+        case thumbURL = "strMealThumb"
+    }
 }
