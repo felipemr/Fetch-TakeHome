@@ -9,28 +9,34 @@ import SwiftUI
 
 struct MealDetailsView: View {
 
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = MealDetailsViewModel()
     @State private var errorMessage = ""
 
     let mealID: String
 
     var body: some View {
-        ScrollView {
-            VStack {
-                mealImage
-                Spacer()
-            }
-            recipeSheet
-            
-            if !errorMessage.isEmpty {
+        ZStack {
+            ScrollView {
                 VStack {
-                    Text("An error has happened, please try again")
-                    Text(errorMessage)
+                    mealImage
+                    Spacer()
+                }
+                recipeSheet
+
+                if !errorMessage.isEmpty {
+                    VStack {
+                        Text("An error has happened, please try again")
+                        Text(errorMessage)
+                    }
                 }
             }
+            .scrollIndicators(.never)
+            .ignoresSafeArea()
+            .toolbar(.hidden)
+
+            closeButton
         }
-        .scrollIndicators(.never)
-        .ignoresSafeArea()
         .task {
             do {
                 try await viewModel.getDessertList(id: mealID)
@@ -38,6 +44,28 @@ struct MealDetailsView: View {
                 errorMessage = error.localizedDescription
             }
         }
+    }
+
+    var closeButton: some View {
+        HStack {
+            VStack {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 25))
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.black.opacity(0.3))
+                        .background(.regularMaterial)
+                        .clipShape(Circle())
+                }
+                .padding()
+                Spacer()
+            }
+            Spacer()
+        }
+
     }
 
     var recipeSheet: some View {
