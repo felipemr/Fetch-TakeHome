@@ -11,6 +11,7 @@ struct DessertListView: View {
 
     @StateObject private var viewModel = DesserListViewModel()
     @State private var loading = false
+    @State private var searchText = ""
 
     var body: some View {
         NavigationStack {
@@ -27,6 +28,7 @@ struct DessertListView: View {
             .navigationDestination(for: MealListItem.self) { dessertItem in
                 MealDetailsView(mealID: dessertItem.id)
             }
+            .searchable(text: $searchText)
             .task {
                 do {
                     try await viewModel.getDessertList()
@@ -40,7 +42,12 @@ struct DessertListView: View {
     var desserList: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 180))], spacing: 20) {
-                ForEach(viewModel.dessertList) { dessert in
+                ForEach(viewModel.dessertList.filter({ item in
+                    guard !searchText.isEmpty else {
+                        return true
+                    }
+                    return item.name.localizedStandardContains(searchText)
+                })) { dessert in
                     NavigationLink(value: dessert) {
                         DessertListCardView(dessert: dessert)
                     }
