@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362180C22B488C90009923D8 /* DessertListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362180C12B488C90009923D8 /* DessertListCardView.swift */; };
 		3645CD772B4798C100382A5B /* DessertMenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3645CD762B4798C100382A5B /* DessertMenuApp.swift */; };
 		3645CD792B4798C100382A5B /* DessertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3645CD782B4798C100382A5B /* DessertListView.swift */; };
 		3645CD7B2B4798C200382A5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3645CD7A2B4798C200382A5B /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362180C12B488C90009923D8 /* DessertListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertListCardView.swift; sourceTree = "<group>"; };
 		3645CD732B4798C100382A5B /* DessertMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DessertMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3645CD762B4798C100382A5B /* DessertMenuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertMenuApp.swift; sourceTree = "<group>"; };
 		3645CD782B4798C100382A5B /* DessertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertListView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				3645CD892B47A87E00382A5B /* MealDetailsView.swift */,
 				3645CD782B4798C100382A5B /* DessertListView.swift */,
+				362180C12B488C90009923D8 /* DessertListCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				3645CD962B47BF7600382A5B /* Optional+.swift in Sources */,
 				3645CD772B4798C100382A5B /* DessertMenuApp.swift in Sources */,
 				3645CD862B47A32A00382A5B /* MealList.swift in Sources */,
+				362180C22B488C90009923D8 /* DessertListCardView.swift in Sources */,
 				3645CD922B47BF3F00382A5B /* MealDetailsViewModel.swift in Sources */,
 				3645CD8A2B47A87E00382A5B /* MealDetailsView.swift in Sources */,
 			);

@@ -21,7 +21,7 @@ struct MealListItem: Codable, Identifiable, Hashable {
     let thumbURL: URL?
 
     static func sample() -> Self {
-        return MealListItem(id: "Sample 01", name: "Cake", thumbURL: URL(string: "https://www.themealdb.com/images/media/meals/ywwrsp1511720277.jpg"))
+        return MealListItem(id: "Sample 01", name: "Cake With Comple Name", thumbURL: URL(string: "https://www.themealdb.com/images/media/meals/ywwrsp1511720277.jpg"))
     }
 
     enum CodingKeys: String, CodingKey {

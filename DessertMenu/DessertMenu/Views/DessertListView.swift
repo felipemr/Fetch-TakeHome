@@ -38,25 +38,16 @@ struct DessertListView: View {
     }
 
     var desserList: some View {
-        List(viewModel.dessertList) { dessert in
-            NavigationLink(value: dessert) {
-                HStack {
-                    AsyncImage(url: dessert.thumbURL) { img in
-                        img
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                    } placeholder: {
-                        Circle()
-                            .foregroundColor(.accentColor)
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 180))], spacing: 20) {
+                ForEach(viewModel.dessertList) { dessert in
+                    NavigationLink(value: dessert) {
+                        DessertListCardView(dessert: dessert)
                     }
-                    .frame(width: 25)
-
-                    Text(dessert.name)
-
                 }
             }
         }
+        .scrollIndicators(.hidden)
     }
 
 
