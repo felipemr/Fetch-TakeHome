@@ -11,13 +11,11 @@ struct MealResponse: Codable {
     let meals: [Meal]
 }
 
-
 struct Meal: Codable {
     // Meal Details
     let idMeal: String
     let strMeal: String
     let strCategory: String?
-    let strArea: String?
 
     // Ingredients
     let strIngredient1, strIngredient2, strIngredient3, strIngredient4: String?
@@ -35,15 +33,9 @@ struct Meal: Codable {
 
     // Other
     let strInstructions: String
-    let strMealThumb: String
-    let strTags: String?
-    let strYoutube: String?
-
-    let strSource: String?
-    let strDrinkAlternate: String?
-    let strImageSource: String?
-    let strCreativeCommonsConfirmed: String?
-    let dateModified: String?
+    let strMealThumb: URL
+    let strYoutube: URL?
+    let strSource: URL?
 
     var ingredients: [String] {
         var ingredients = [String]()
@@ -186,7 +178,6 @@ struct Meal: Codable {
             idMeal: "52897",
             strMeal: "Carrot Cake",
             strCategory: "Dessert",
-            strArea: "British",
             strIngredient1: "Ingredient", strIngredient2: "Ingredient", strIngredient3: "Ingredient", strIngredient4: "Ingredient",
             strIngredient5: "Ingredient", strIngredient6: "Ingredient", strIngredient7: "Ingredient", strIngredient8: "Ingredient",
             strIngredient9: "Ingredient", strIngredient10: "Ingredient", strIngredient11: "Ingredient", strIngredient12: "Ingredient",
@@ -200,11 +191,9 @@ struct Meal: Codable {
 
             strInstructions: "For the carrot cake, preheat the oven to 160C/325F/Gas 3. Grease and line a 26cm/10in springform cake tin.\r\nMix all of the ingredients for the carrot cake, except the carrots and walnuts, together in a bowl until well combined. Stir in the carrots and walnuts.\r\nSpoon the mixture into the cake tin and bake for 1 hour 15 minutes, or until a skewer inserted into the middle comes out clean. Remove the cake from the oven and set aside to cool for 10 minutes, then carefully remove the cake from the tin and set aside to cool completely on a cooling rack.\r\nMeanwhile, for the icing, beat the cream cheese, caster sugar and butter together in a bowl until fluffy. Spread the icing over the top of the cake with a palette knife.",
 
-            strMealThumb: "https://www.themealdb.com/images/media/meals/vrspxv1511722107.jpg",
-            strTags: "Cake,Treat,Sweet",
-            strYoutube: "https://www.youtube.com/watch?v=asjZ7iTrGKA",
-            strSource: "https://www.bbc.co.uk/food/recipes/classic_carrot_cake_08513",
-            strDrinkAlternate: "", strImageSource: "", strCreativeCommonsConfirmed: "", dateModified: "")
+            strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/vrspxv1511722107.jpg")!,
+            strYoutube: URL(string: "https://www.youtube.com/watch?v=asjZ7iTrGKA"),
+            strSource: URL(string: "https://www.bbc.co.uk/food/recipes/classic_carrot_cake_08513"))
     }
 }
 
