@@ -40,6 +40,142 @@ struct Meal: Codable {
     let strCreativeCommonsConfirmed: String?
     let dateModified: String?
 
+    var ingredients: [String] {
+        var ingredients = [String]()
+
+        if !strIngredient1.isEmpty {
+            ingredients.append(strIngredient1)
+        }
+        if !strIngredient2.isEmpty {
+            ingredients.append(strIngredient2)
+        }
+        if !strIngredient3.isEmpty {
+            ingredients.append(strIngredient3)
+        }
+        if !strIngredient4.isEmpty {
+            ingredients.append(strIngredient4)
+        }
+        if !strIngredient5.isEmpty {
+            ingredients.append(strIngredient5)
+        }
+        if !strIngredient6.isEmpty {
+            ingredients.append(strIngredient6)
+        }
+        if !strIngredient7.isEmpty {
+            ingredients.append(strIngredient7)
+        }
+        if !strIngredient8.isEmpty {
+            ingredients.append(strIngredient8)
+        }
+        if !strIngredient9.isEmpty {
+            ingredients.append(strIngredient9)
+        }
+        if !strIngredient10.isEmpty {
+            ingredients.append(strIngredient10)
+        }
+
+        if !strIngredient11.isEmpty {
+            ingredients.append(strIngredient11)
+        }
+        if !strIngredient12.isEmpty {
+            ingredients.append(strIngredient12)
+        }
+        if !strIngredient13.isEmpty {
+            ingredients.append(strIngredient13)
+        }
+        if !strIngredient14.isEmpty {
+            ingredients.append(strIngredient14)
+        }
+        if !strIngredient15.isEmpty {
+            ingredients.append(strIngredient15)
+        }
+        if !strIngredient16.isEmpty {
+            ingredients.append(strIngredient16)
+        }
+        if !strIngredient17.isEmpty {
+            ingredients.append(strIngredient17)
+        }
+        if !strIngredient18.isEmpty {
+            ingredients.append(strIngredient18)
+        }
+        if !strIngredient19.isEmpty {
+            ingredients.append(strIngredient19)
+        }
+        if !strIngredient20.isEmpty {
+            ingredients.append(strIngredient20)
+        }
+
+        return ingredients
+    }
+
+    var measures: [String] {
+        var measures = [String]()
+
+        if !strMeasure1.isEmpty {
+            measures.append(strMeasure1)
+        }
+        if !strMeasure2.isEmpty {
+            measures.append(strMeasure2)
+        }
+        if !strMeasure3.isEmpty {
+            measures.append(strMeasure3)
+        }
+        if !strMeasure4.isEmpty {
+            measures.append(strMeasure4)
+        }
+        if !strMeasure5.isEmpty {
+            measures.append(strMeasure5)
+        }
+        if !strMeasure6.isEmpty {
+            measures.append(strMeasure6)
+        }
+        if !strMeasure7.isEmpty {
+            measures.append(strMeasure7)
+        }
+        if !strMeasure8.isEmpty {
+            measures.append(strMeasure8)
+        }
+        if !strMeasure9.isEmpty {
+            measures.append(strMeasure9)
+        }
+        if !strMeasure10.isEmpty {
+            measures.append(strMeasure10)
+        }
+
+        if !strMeasure11.isEmpty {
+            measures.append(strMeasure11)
+        }
+        if !strMeasure12.isEmpty {
+            measures.append(strMeasure12)
+        }
+        if !strMeasure13.isEmpty {
+            measures.append(strMeasure13)
+        }
+        if !strMeasure14.isEmpty {
+            measures.append(strMeasure14)
+        }
+        if !strMeasure15.isEmpty {
+            measures.append(strMeasure15)
+        }
+        if !strMeasure16.isEmpty {
+            measures.append(strMeasure16)
+        }
+        if !strMeasure17.isEmpty {
+            measures.append(strMeasure17)
+        }
+        if !strMeasure18.isEmpty {
+            measures.append(strMeasure18)
+        }
+        if !strMeasure19.isEmpty {
+            measures.append(strMeasure19)
+        }
+        if !strMeasure20.isEmpty {
+            measures.append(strMeasure20)
+        }
+
+        return measures
+    }
+
     static func sample() -> Self {
         return Meal(
             idMeal: "52897",
