@@ -12,6 +12,7 @@ struct DessertListView: View {
     @StateObject private var viewModel = DesserListViewModel()
     @State private var loading = false
     @State private var searchText = ""
+    @State private var errorMessage = ""
 
     var body: some View {
         NavigationStack {
@@ -23,6 +24,14 @@ struct DessertListView: View {
                 if loading {
                     ProgressView()
                 }
+
+                if !errorMessage.isEmpty {
+                    VStack {
+                        Text("An error has happened, please try again")
+                        Text(errorMessage)
+                    }
+                }
+
             }
             .navigationTitle("Desserts")
             .navigationDestination(for: MealListItem.self) { dessertItem in
@@ -31,9 +40,12 @@ struct DessertListView: View {
             .searchable(text: $searchText)
             .task {
                 do {
+                    loading = true
                     try await viewModel.getDessertList()
+                    loading = false
                 } catch {
-                    print(error.localizedDescription)
+                    errorMessage = error.localizedDescription
+                    loading = false
                 }
             }
         }

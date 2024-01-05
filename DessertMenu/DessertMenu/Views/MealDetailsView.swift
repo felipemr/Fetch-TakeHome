@@ -10,6 +10,7 @@ import SwiftUI
 struct MealDetailsView: View {
 
     @StateObject private var viewModel = MealDetailsViewModel()
+    @State private var errorMessage = ""
 
     let mealID: String
 
@@ -20,6 +21,13 @@ struct MealDetailsView: View {
                 Spacer()
             }
             recipeSheet
+            
+            if !errorMessage.isEmpty {
+                VStack {
+                    Text("An error has happened, please try again")
+                    Text(errorMessage)
+                }
+            }
         }
         .scrollIndicators(.never)
         .ignoresSafeArea()
@@ -27,7 +35,7 @@ struct MealDetailsView: View {
             do {
                 try await viewModel.getDessertList(id: mealID)
             } catch {
-                print(error.localizedDescription)
+                errorMessage = error.localizedDescription
             }
         }
     }
